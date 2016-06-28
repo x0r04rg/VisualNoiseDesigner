@@ -43,7 +43,7 @@ namespace NodeEditorFramework
 		[MenuItem ("Window/Visual Noise Designer")]
 		public static void CreateEditor () 
 		{
-            _editor = GetWindow<NodeEditorWindow>(typeof(SceneView));
+            _editor = GetWindow<NodeEditorWindow>();
 			_editor.minSize = new Vector2 (800, 600);
 			NodeEditor.ClientRepaints += _editor.Repaint;
 			NodeEditor.initiated = NodeEditor.InitiationError = false;
