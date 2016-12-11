@@ -32,7 +32,12 @@ namespace NodeEditorFramework
 		public Rect sideWindowRect { get { return new Rect (position.width - sideWindowWidth, 0, sideWindowWidth, position.height); } }
 		public Rect canvasWindowRect { get { return new Rect (0, 0, position.width - sideWindowWidth, position.height); } }
 
-        Texture2D preview = new Texture2D(256, 256);
+        Texture2D _preview;
+		Texture2D preview 
+		{ 
+			get { return _preview ?? (_preview = new Texture2D (256, 256)); } 
+			set { _preview = value; }
+		}
         NoiseCalculation previewCalculation;
         bool previewNeedsUpdate = true;
         NodeBase lastSelected;
